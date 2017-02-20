@@ -6,7 +6,7 @@ module RGeo
     # Some default column constructors specifications for most spatial
     # databases. Individual adapters may add to or override this list.
     DEFAULT_SPATIAL_COLUMN_CONSTRUCTORS = {
-      spatial:             { :type => 'geometry' }.freeze,
+      spatial:             { type: 'geometry' }.freeze,
       geometry:            {}.freeze,
       point:               {}.freeze,
       line_string:         {}.freeze,
@@ -19,7 +19,7 @@ module RGeo
 
     # Index definition struct with a spatial flag field.
 
-    class SpatialIndexDefinition < Struct.new(:table, :name, :unique, :columns, :lengths, :orders, :where, :spatial)
+    class SpatialIndexDefinition < Struct.new(:table, :name, :unique, :columns, :lengths, :orders, :where, :using, :type, :spatial)
     end
 
     # Returns a feature type module given a string type.
